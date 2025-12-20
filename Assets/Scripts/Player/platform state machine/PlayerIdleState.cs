@@ -9,7 +9,8 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
-        if (player.moveInput.ReadValue<float>() != 0)
+        player.Move();
+        if (player.m_rigidBody.linearVelocityX != 0)
         {
             player.ChangeState(player.walkState);
             return;

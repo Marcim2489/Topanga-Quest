@@ -9,6 +9,12 @@ public class PlayerWalkState : PlayerBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
+        player.Move();
+        if (player.m_rigidBody.linearVelocityX == 0)
+        {
+            player.ChangeState(player.idleState);
+            return;
+        }
         if (player.IsGrounded() == false)
         {
             player.ChangeState(player.fallState);
@@ -19,12 +25,8 @@ public class PlayerWalkState : PlayerBaseState
             player.ChangeState(player.jumpState);
             return;
         }
-        player.Move();
-        if (player.m_rigidBody.linearVelocityX == 0)
-        {
-            player.ChangeState(player.idleState);
-            return;
-        }
+        
+        
     }
 
     public override void ExitState(PlayerStateManager player)

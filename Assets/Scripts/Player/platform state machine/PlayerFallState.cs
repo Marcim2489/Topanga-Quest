@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerFallState : PlayerBaseState
 {
+    private float timer;
+
     public override void EnterState(PlayerStateManager player)
     {
         player.m_animator.Play("PlayerFall");
@@ -9,18 +11,24 @@ public class PlayerFallState : PlayerBaseState
         {
             player.m_rigidBody.linearVelocityY = 0;
         }
+        timer = 0;
     }
 
     public override void UpdateState(PlayerStateManager player)
     {
-        if (player.IsGrounded())
+        player.Move();
+        timer += Time.deltaTime;
+        if (player.IsGrounded() || timer <= player.coyoteTime)
         {
             if (player.jumpPressed)
             {
                 player.ChangeState(player.jumpState);
                 return;
             }
-            if (player.moveInput.ReadValue<float>() != 0)
+        }
+        if (player.IsGrounded())
+        {
+            if (player.m_rigidBody.linearVelocityX != 0)
             {
                 player.ChangeState(player.walkState);
                 return;
@@ -30,11 +38,13 @@ public class PlayerFallState : PlayerBaseState
                 return;
             }
         }
-        player.Move();
+            
+            
+        
     }
 
     public override void ExitState(PlayerStateManager player)
     {
-        
+        timer = 0;
     }
 }

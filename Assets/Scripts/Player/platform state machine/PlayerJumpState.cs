@@ -13,10 +13,11 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
+        player.Move();
         timer+=Time.deltaTime;
         if (player.IsGrounded())
         {
-            if (player.moveInput.ReadValue<float>() != 0)
+            if (player.m_rigidBody.linearVelocityX != 0)
             {
                 player.ChangeState(player.walkState);
                 return;
@@ -33,7 +34,6 @@ public class PlayerJumpState : PlayerBaseState
                 player.ChangeState(player.fallState);
                 return;
             }
-            player.Move();
         }
     }
 

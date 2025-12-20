@@ -15,6 +15,7 @@ public class PlayerStateManager : Player
     public InputAction jumpInput;
     [SerializeField] private float jumpBuffer = 0.2f;
     public float minimalJumpTime = 0.2f;
+    public float coyoteTime = 0.1f;
     public float maxFallSpeed = 200;
     public Vector2 floorRayCastSize;
     public float floorRaycastDistance;
@@ -67,12 +68,18 @@ public class PlayerStateManager : Player
     public void Move()
     {
         float direction = moveInput.ReadValue<float>();
+        Debug.Log(direction);
         if (direction > 0)
         {
             direction = 1;
         }else if (direction < 0)
         {
             direction = -1;
+        }
+        else
+        {
+            m_rigidBody.linearVelocityX = 0;
+            return;
         }
 
         m_rigidBody.linearVelocityX = moveSpeed*direction*Time.deltaTime;
@@ -106,9 +113,9 @@ public class PlayerStateManager : Player
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube(transform.position - transform.up*floorRaycastDistance,floorRayCastSize);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.DrawWireCube(transform.position - transform.up*floorRaycastDistance,floorRayCastSize);
+    // }
 
 }

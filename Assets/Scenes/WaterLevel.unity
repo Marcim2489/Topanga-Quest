@@ -128,6 +128,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4625321634566987192, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625321634566987192, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.1622036
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625321634566987192, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.08784264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625321634566987192, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0
       objectReference: {fileID: 0}
@@ -351,7 +363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad0a01c3d738134eb971b120485f5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 3
   moveSpeed: 200
+  m_rigidBody: {fileID: 1375411975}
+  m_animator: {fileID: 1375411977}
+  m_spriteRenderer: {fileID: 2146350663}
   jump: 5
   moveInput:
     m_Name: Move Input
@@ -404,7 +420,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   maxFallSpeed: 6
-  m_spriteRenderer: {fileID: 2146350663}
 --- !u!95 &1375411977
 Animator:
   serializedVersion: 7

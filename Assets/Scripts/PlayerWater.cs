@@ -1,21 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerWater : MonoBehaviour
+public class PlayerWater : Player
 {
-    [SerializeField] private int moveSpeed = 60;
     [SerializeField] private int jump = 10;
     [SerializeField] private InputAction moveInput;
     [SerializeField] private InputAction jumpInput;
     [SerializeField] private float maxFallSpeed = 200;
-    private Rigidbody2D m_rigidBody;
-    private Animator m_animator;
-    [SerializeField] private SpriteRenderer m_spriteRenderer;
 
     void Start()
     {
-        m_rigidBody = GetComponent<Rigidbody2D>();
-        m_animator = GetComponent<Animator>();
         moveInput.Enable();
         jumpInput.Enable();
     }

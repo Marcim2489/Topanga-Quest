@@ -2162,7 +2162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d0926e04cbac34da010c21a7665acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 3
   moveSpeed: 400
+  m_rigidBody: {fileID: 1010189455}
+  m_animator: {fileID: 1010189460}
+  m_spriteRenderer: {fileID: 1010189456}
   jump: 10
   moveInput:
     m_Name: Move Input
@@ -2215,7 +2219,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   maxFallSpeed: 200
-  floorRayCastSize: {x: 0.245, y: 0.11}
+  floorRayCastSize: {x: 0.23, y: 0.11}
   floorRaycastDistance: 0.2
   floorRayCastOffsetX: 0
   floorRaycastLayer:

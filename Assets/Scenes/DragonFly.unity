@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 119610444}
   - component: {fileID: 119610443}
   m_Layer: 0
-  m_Name: tbj2_sprites_16x16_transparent_147
+  m_Name: guy_sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 1075479801}
   - component: {fileID: 1075479804}
   - component: {fileID: 1075479803}
+  - component: {fileID: 1075479806}
   - component: {fileID: 1075479802}
   m_Layer: 0
   m_Name: Player
@@ -432,7 +433,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60638b2aff4b1954caaaf9d46ea17ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flySpeed: 300
+  maxHealth: 3
+  moveSpeed: 400
+  m_rigidBody: {fileID: 1075479801}
+  m_animator: {fileID: 1075479802}
+  m_spriteRenderer: {fileID: 1075479800}
   flyInput:
     m_Name: Fly Input
     m_Type: 0
@@ -466,6 +471,42 @@ MonoBehaviour:
       m_Action: Fly Input
       m_Flags: 8
     m_Flags: 0
+--- !u!58 &1075479806
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075479798}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.17132068, y: 0.29694384}
+  m_Radius: 0.17213625
 --- !u!1001 &1121565260
 PrefabInstance:
   m_ObjectHideFlags: 0

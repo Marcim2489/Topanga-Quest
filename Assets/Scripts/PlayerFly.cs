@@ -1,18 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerFly : MonoBehaviour
+public class PlayerFly : Player
 {
-    [SerializeField] private float flySpeed = 50;
     [SerializeField] private InputAction flyInput;
-    private Rigidbody2D m_rigidBody;
-    private Animator m_animator;
     private float flyDirection;
 
     void Start()
     {
-        m_rigidBody = GetComponent<Rigidbody2D>();
-        m_animator = GetComponent<Animator>();
         flyInput.Enable();
     }
 
@@ -30,7 +25,7 @@ public class PlayerFly : MonoBehaviour
         {
             flyDirection = -1;
         }
-        m_rigidBody.linearVelocityY = flyDirection * flySpeed * Time.deltaTime;
+        m_rigidBody.linearVelocityY = flyDirection * moveSpeed * Time.deltaTime;
         m_animator.SetInteger("Direction", (int)flyDirection);
     }
 

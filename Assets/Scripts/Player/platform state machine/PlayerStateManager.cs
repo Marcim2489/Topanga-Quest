@@ -92,8 +92,9 @@ public class PlayerStateManager : Player
     }
     public override void TakeDamage()
     {
-        hitbox.gameObject.SetActive(false);
-        Destroy(gameObject);
+        // hitbox.gameObject.SetActive(false);
+        // Destroy(gameObject);
+        ChangeState(deathState);
     }
     private void Pulinho()
     {

@@ -1995,7 +1995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010189457}
-  - component: {fileID: 1010189459}
+  - component: {fileID: 1010189461}
   - component: {fileID: 1010189456}
   - component: {fileID: 1010189455}
   - component: {fileID: 1010189458}
@@ -2150,81 +2150,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.25, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1010189459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010189454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d0926e04cbac34da010c21a7665acc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
-  moveSpeed: 400
-  m_rigidBody: {fileID: 1010189455}
-  m_animator: {fileID: 1010189460}
-  m_spriteRenderer: {fileID: 1010189456}
-  jump: 10
-  moveInput:
-    m_Name: Move Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0cc70d82-26fd-4866-b282-55de790fbb71
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 1D Axis
-      m_Id: 48add718-c448-456f-825b-2ed5beec4f50
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move Input
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 28ec7baf-62b6-4cdc-ae12-04d36827a6b3
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move Input
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 8d89748b-936b-4371-97fa-010e2ce015e6
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move Input
-      m_Flags: 8
-    m_Flags: 0
-  jumpInput:
-    m_Name: Jump Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: f05e4efe-0a75-4385-b0e5-4209be11442b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: f703e42f-9369-483b-8b64-ddff7f7431a9
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump Input
-      m_Flags: 0
-    m_Flags: 0
-  maxFallSpeed: 200
-  floorRayCastSize: {x: 0.23, y: 0.11}
-  floorRaycastDistance: 0.2
-  floorRayCastOffsetX: 0
-  floorRaycastLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!95 &1010189460
 Animator:
   serializedVersion: 7
@@ -2247,6 +2172,80 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1010189461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010189454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6680c4e173af601408f10270394763fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 400
+  m_rigidBody: {fileID: 1010189455}
+  m_animator: {fileID: 1010189460}
+  m_spriteRenderer: {fileID: 1010189456}
+  jump: 10
+  moveInput:
+    m_Name: Move Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ef876da8-9455-4494-a150-315e02f83f36
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: 27115a82-8c51-4857-90f3-d0ddab9733fc
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: a7fbbeac-ad88-4c96-9999-28c8495e3941
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 946f9a11-cde1-4d45-a465-8ef43661b13e
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    m_Flags: 0
+  jumpInput:
+    m_Name: Jump Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 21e41fff-60a5-429a-99cc-e0c1c716b447
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: cbc89d83-6618-44c8-ad4c-f38f9f45537b
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Input
+      m_Flags: 0
+    m_Flags: 0
+  maxFallSpeed: 200
+  floorRayCastSize: {x: 0.23, y: 0.12}
+  floorRaycastDistance: 0.2
+  floorRayCastOffsetX: 0
+  floorRaycastLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

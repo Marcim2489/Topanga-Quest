@@ -10,4 +10,12 @@ public abstract class Player : MonoBehaviour
     public virtual void TakeDamage()
     {
     }
+    public virtual void OnTriggerEnter2D(Collider2D other) 
+    {
+        // if (other.gameObject.layer != LayerMask.NameToLayer("EnemyHitbox"))
+        // {
+        //     return;
+        // }
+        // TakeDamage();
+    }
 }

@@ -14,7 +14,7 @@ public class PlayerIdleState : PlayerBaseState
             player.ChangeState(player.walkState);
             return;
         }
-        if (player.jumpInput.WasPressedThisFrame())
+        if (player.jumpPressed)
         {
             player.ChangeState(player.jumpState);
             return;

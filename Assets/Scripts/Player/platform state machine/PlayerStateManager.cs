@@ -13,20 +13,41 @@ public class PlayerStateManager : Player
     public int jump = 10;
     public InputAction moveInput;
     public InputAction jumpInput;
+    [SerializeField] private float jumpBuffer = 0.2f;
+    public float minimalJumpTime = 0.2f;
     public float maxFallSpeed = 200;
     public Vector2 floorRayCastSize;
     public float floorRaycastDistance;
     public LayerMask floorRaycastLayer;
+    [SerializeField] private PlayerHitbox hitbox;
+    [HideInInspector]public bool jumpPressed;
+    private float jumpBufferTimer;
 
     void Start()
     {
         ChangeState(idleState);
         jumpInput.Enable();
         moveInput.Enable();
+        hitbox.landedHit += Pulinho;
+        hitbox.tookHit += TakeDamage;
     }
 
     void Update()
     {
+        if (jumpPressed)
+        {
+            jumpBufferTimer -= Time.deltaTime;
+            if (jumpBufferTimer <= 0)
+            {
+                jumpPressed = false;
+            }
+        }
+        if (jumpInput.WasPressedThisFrame())
+        {
+            jumpBufferTimer = jumpBuffer;
+            jumpPressed = true;
+        }
+        
         currentState.UpdateState(this);
     }
 
@@ -65,14 +86,18 @@ public class PlayerStateManager : Player
     }
     public override void TakeDamage()
     {
-        ChangeState(deathState);
+        hitbox.gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
+    private void Pulinho()
+    {
+        ChangeState(jumpState);
     }
 
     public bool IsGrounded()
     {
         if (Physics2D.BoxCast(transform.position, floorRayCastSize, 0, -transform.up, floorRaycastDistance, floorRaycastLayer))
         {
-            
             return true;
         }
         else
@@ -85,4 +110,5 @@ public class PlayerStateManager : Player
     {
         Gizmos.DrawWireCube(transform.position - transform.up*floorRaycastDistance,floorRayCastSize);
     }
+
 }

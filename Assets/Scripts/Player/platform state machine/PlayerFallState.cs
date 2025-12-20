@@ -15,6 +15,11 @@ public class PlayerFallState : PlayerBaseState
     {
         if (player.IsGrounded())
         {
+            if (player.jumpPressed)
+            {
+                player.ChangeState(player.jumpState);
+                return;
+            }
             if (player.moveInput.ReadValue<float>() != 0)
             {
                 player.ChangeState(player.walkState);

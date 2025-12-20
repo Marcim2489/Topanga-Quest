@@ -68,7 +68,6 @@ public class PlayerStateManager : Player
     public void Move()
     {
         float direction = moveInput.ReadValue<float>();
-        Debug.Log(direction);
         if (direction > 0)
         {
             direction = 1;

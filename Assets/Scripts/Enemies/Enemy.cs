@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]private int maxHealth = 1;
-    private int currentHealth;
-    [SerializeField]private EnemyHitbox hitbox;
+    [SerializeField]protected int maxHealth = 1;
+    protected int currentHealth;
+    [SerializeField]protected EnemyHitbox hitbox;
+    [SerializeField]protected Rigidbody2D m_rigidBody;
+    [SerializeField]protected SpriteRenderer m_sprite;
+    [SerializeField]protected Animator m_animator;
+
     public virtual void Start()
     {
         currentHealth = maxHealth;
@@ -23,15 +27,4 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    // public virtual void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.gameObject.layer != LayerMask.NameToLayer("PlayerHitbox"))
-    //     {
-    //         return;
-    //     }
-    //     other.gameObject.GetComponent<PlayerHitbox>().LandedHit();
-    //     TakeDamage();
-    // }
-
 }

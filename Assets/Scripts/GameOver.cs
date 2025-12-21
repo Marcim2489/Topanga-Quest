@@ -14,7 +14,6 @@ public class GameOver : MonoBehaviour
 
     void ReturnToLevel()
     {
-        // Debug.Log(GameManager.Instance.lastLevelPlayed);
         LevelLoader.Instance.LoadLevel(GameManager.Instance.lastLevelPlayed);
     }
     void BackToMenu()

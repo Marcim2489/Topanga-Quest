@@ -19,17 +19,7 @@ public class LevelLoader : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    // private void Start()
-    // {
-    //     if (player == null)
-    //     {
-    //         player = FindAnyObjectByType<Player>();
-    //     }
-    //     if (player != null)
-    //     {
-    //         player.died += LoadGameOver;
-    //     }
-    // }
+
     public void SetPlayer(Player p)
     {
         player = p;

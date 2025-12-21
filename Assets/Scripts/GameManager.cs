@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Debug.Log(lastLevelPlayed);
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }

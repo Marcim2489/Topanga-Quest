@@ -8,10 +8,11 @@ public abstract class Player : MonoBehaviour
     public SpriteRenderer m_spriteRenderer;
     [SerializeField] protected PlayerHitbox hitbox;
     public event System.Action died;
-
+    public float deathAnimationTime = 1;
     public virtual void Start()
     {
         hitbox.tookHit += TakeDamage;
+        LevelLoader.Instance.SetPlayer(this);
     }
     
     public virtual void TakeDamage()

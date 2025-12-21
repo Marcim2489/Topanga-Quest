@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="1" name="Level1" style="align-self: flex-start;" />
+    <ui:Button text="2" name="Level2" style="align-self: flex-end; white-space: pre; text-overflow: clip; -unity-text-align: middle-center;" />
+    <ui:Button text="3" name="Level3" style="align-self: flex-start;" />
+    <ui:Button text="4" name="Level4" style="align-self: flex-end;" />
+</ui:UXML>

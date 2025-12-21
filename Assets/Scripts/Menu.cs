@@ -16,7 +16,7 @@ public class Menu : MonoBehaviour
 
     void StartPressed()
     {
-        
+        LevelLoader.Instance.LoadLevel("LevelSelection");
     }
 
     void ExitPressed()

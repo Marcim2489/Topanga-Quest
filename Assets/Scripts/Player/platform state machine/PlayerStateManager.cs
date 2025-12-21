@@ -20,17 +20,17 @@ public class PlayerStateManager : Player
     public Vector2 floorRayCastSize;
     public float floorRaycastDistance;
     public LayerMask floorRaycastLayer;
-    [SerializeField] private PlayerHitbox hitbox;
+    
     [HideInInspector]public bool jumpPressed;
     private float jumpBufferTimer;
 
-    void Start()
+    public override void Start()
     {
+        base.Start();
         ChangeState(idleState);
         jumpInput.Enable();
         moveInput.Enable();
         hitbox.landedHit += Pulinho;
-        hitbox.tookHit += TakeDamage;
     }
 
     void Update()
@@ -92,8 +92,6 @@ public class PlayerStateManager : Player
     }
     public override void TakeDamage()
     {
-        // hitbox.gameObject.SetActive(false);
-        // Destroy(gameObject);
         ChangeState(deathState);
     }
     private void Pulinho()

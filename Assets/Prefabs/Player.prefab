@@ -54,6 +54,7 @@ MonoBehaviour:
   m_rigidBody: {fileID: 7151204839655599511}
   m_animator: {fileID: 6288989270089359425}
   m_spriteRenderer: {fileID: 529903484371127356}
+  hitbox: {fileID: 290887589245953712}
   jump: 10
   moveInput:
     m_Name: Move Input
@@ -114,7 +115,6 @@ MonoBehaviour:
   floorRaycastLayer:
     serializedVersion: 2
     m_Bits: 64
-  hitbox: {fileID: 290887589245953712}
   jumpPressed: 0
 --- !u!212 &529903484371127356
 SpriteRenderer:
@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b1a9f3b4ba58f4094b1071ea3400ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dealsDamage: 1
 --- !u!61 &5581819073869783244
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -367,11 +368,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4625321634566987192, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0
+      value: 1.99375
       objectReference: {fileID: 0}
     - target: {fileID: 4625321634566987192, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.31111112
       objectReference: {fileID: 0}
     - target: {fileID: 6509585573048614972, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
       propertyPath: m_LocalPosition.x

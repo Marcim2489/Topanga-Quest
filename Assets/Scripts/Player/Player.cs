@@ -6,7 +6,12 @@ public abstract class Player : MonoBehaviour
     public Rigidbody2D m_rigidBody;
     public Animator m_animator;
     public SpriteRenderer m_spriteRenderer;
-
+    [SerializeField] protected PlayerHitbox hitbox;
+    public virtual void Start()
+    {
+        hitbox.tookHit += TakeDamage;
+    }
+    
     public virtual void TakeDamage()
     {
     }

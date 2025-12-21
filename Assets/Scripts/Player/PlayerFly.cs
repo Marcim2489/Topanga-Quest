@@ -6,8 +6,9 @@ public class PlayerFly : Player
     [SerializeField] private InputAction flyInput;
     private float flyDirection;
 
-    void Start()
+    public override void Start()
     {
+        base.Start();
         flyInput.Enable();
     }
 
@@ -29,4 +30,8 @@ public class PlayerFly : Player
         m_animator.SetInteger("Direction", (int)flyDirection);
     }
 
+    public override void TakeDamage()
+    {
+        Destroy(gameObject);
+    }
 }

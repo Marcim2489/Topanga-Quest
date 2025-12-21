@@ -7,6 +7,8 @@ public abstract class Player : MonoBehaviour
     public Animator m_animator;
     public SpriteRenderer m_spriteRenderer;
     [SerializeField] protected PlayerHitbox hitbox;
+    public event System.Action died;
+
     public virtual void Start()
     {
         hitbox.tookHit += TakeDamage;
@@ -14,6 +16,7 @@ public abstract class Player : MonoBehaviour
     
     public virtual void TakeDamage()
     {
+        died?.Invoke();
     }
     public virtual void OnTriggerEnter2D(Collider2D other) 
     {

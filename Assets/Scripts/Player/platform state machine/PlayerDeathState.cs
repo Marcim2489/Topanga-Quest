@@ -14,7 +14,7 @@ public class PlayerDeathState : PlayerBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
-        
+        player.MaxFallSpeed();
     }
 
     public override void ExitState(PlayerStateManager player)

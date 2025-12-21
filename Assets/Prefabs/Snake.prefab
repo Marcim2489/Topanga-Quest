@@ -54,10 +54,10 @@ MonoBehaviour:
   m_sprite: {fileID: 3361712954122598584}
   m_animator: {fileID: 0}
   frontCastSize: {x: 0.2, y: 0.09}
-  frontCastDistance: 0.157
+  frontCastDistance: 0.2
   frontCastYOffset: -0.18
-  bottomCastSize: {x: 0.021, y: 0.021}
-  bottomCastDistance: 0.2
+  bottomCastSize: {x: 0.02, y: 0.021}
+  bottomCastDistance: 0.29
   bottomCastYOffset: -0.284
   castLayer:
     serializedVersion: 2

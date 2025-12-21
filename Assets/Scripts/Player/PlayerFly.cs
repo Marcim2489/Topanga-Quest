@@ -5,6 +5,7 @@ public class PlayerFly : Player
 {
     [SerializeField] private InputAction flyInput;
     private float flyDirection;
+    private bool dead;
 
     public override void Start()
     {
@@ -14,6 +15,10 @@ public class PlayerFly : Player
 
     void Update()
     {
+        if (flyInput.enabled == false)
+        {
+            return;
+        }
         if (flyInput.IsPressed() == false && flyInput.WasReleasedThisFrame() == false)
         {
             return;
@@ -32,6 +37,13 @@ public class PlayerFly : Player
 
     public override void TakeDamage()
     {
-        Destroy(gameObject);
+        base.TakeDamage();
+        m_animator.SetTrigger("Death");
+        flyInput.Disable();
+        if (m_rigidBody.linearVelocityY > 0)
+        {
+            m_rigidBody.linearVelocityY = 0;
+        }
+        m_rigidBody.gravityScale = 1;
     }
 }

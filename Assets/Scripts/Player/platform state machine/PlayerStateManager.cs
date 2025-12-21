@@ -93,6 +93,7 @@ public class PlayerStateManager : Player
     public override void TakeDamage()
     {
         ChangeState(deathState);
+        base.TakeDamage();
     }
     private void Pulinho()
     {
@@ -111,6 +112,13 @@ public class PlayerStateManager : Player
         }
     }
 
+    public void MaxFallSpeed()
+    {
+        if (m_rigidBody.linearVelocityY < -maxFallSpeed)
+        {
+            m_rigidBody.linearVelocityY = -maxFallSpeed;
+        }
+    }
     // private void OnDrawGizmos()
     // {
     //     Gizmos.DrawWireCube(transform.position - transform.up*floorRaycastDistance,floorRayCastSize);

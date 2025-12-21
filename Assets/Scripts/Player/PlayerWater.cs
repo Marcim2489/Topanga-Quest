@@ -51,6 +51,7 @@ public class PlayerWater : Player
 
     public override void TakeDamage()
     {
+        base.TakeDamage();
         m_animator.SetTrigger("death");
         Instantiate(bubbleParticle,transform.position,transform.rotation);
         maxFallSpeed = 1;

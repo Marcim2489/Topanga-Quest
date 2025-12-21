@@ -17,6 +17,7 @@ public class PlayerFallState : PlayerBaseState
     public override void UpdateState(PlayerStateManager player)
     {
         player.Move();
+        player.MaxFallSpeed();
         timer += Time.deltaTime;
         if (player.IsGrounded() || timer <= player.coyoteTime)
         {
@@ -38,9 +39,6 @@ public class PlayerFallState : PlayerBaseState
                 return;
             }
         }
-            
-            
-        
     }
 
     public override void ExitState(PlayerStateManager player)

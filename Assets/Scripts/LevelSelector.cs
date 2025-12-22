@@ -22,7 +22,6 @@ public class LevelSelector : MonoBehaviour
                 break;
         }
         GameManager.Instance.lastLevelPlayed = levelName;
-        Debug.Log(GameManager.Instance.lastLevelPlayed = levelName);
         LevelLoader.Instance.LoadLevel(levelName);
     }
 }

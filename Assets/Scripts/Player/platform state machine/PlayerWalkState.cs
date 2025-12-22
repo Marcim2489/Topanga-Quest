@@ -5,6 +5,7 @@ public class PlayerWalkState : PlayerBaseState
     public override void EnterState(PlayerStateManager player)
     {
         player.m_animator.Play("PlayerWalk");
+        player.canJump = true;
     }
 
     public override void UpdateState(PlayerStateManager player)

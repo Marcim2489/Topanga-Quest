@@ -21,7 +21,7 @@ public class PlayerFallState : PlayerBaseState
         timer += Time.deltaTime;
         if (player.IsGrounded() || timer <= player.coyoteTime)
         {
-            if (player.jumpPressed)
+            if (player.jumpPressed && player.canJump)
             {
                 player.ChangeState(player.jumpState);
                 return;

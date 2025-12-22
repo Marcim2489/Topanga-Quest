@@ -9,6 +9,7 @@ public class PlayerJumpState : PlayerBaseState
         player.m_rigidBody.linearVelocityY = player.jump;
         player.jumpPressed = false;
         timer = 0;
+        player.canJump = false;
     }
 
     public override void UpdateState(PlayerStateManager player)

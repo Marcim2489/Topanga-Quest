@@ -23,6 +23,7 @@ public class PlayerStateManager : Player
     
     [HideInInspector]public bool jumpPressed;
     private float jumpBufferTimer;
+    [HideInInspector]public bool canJump;
 
     public override void Start()
     {

@@ -11,7 +11,7 @@ public class PlayerHitbox : MonoBehaviour
         if (enemy != null)
         {
             
-            if (gameObject.transform.position.y > collision.gameObject.transform.position.y && dealsDamage)
+            if (gameObject.transform.position.y > collision.gameObject.transform.position.y && dealsDamage && enemy.takesDamage)
             {
                 enemy.TookHit();
                 LandedHit();

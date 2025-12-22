@@ -5,6 +5,7 @@ public class PlayerIdleState : PlayerBaseState
     public override void EnterState(PlayerStateManager player)
     {
         player.m_animator.Play("PlayerIdle");
+        player.canJump = true;
     }
 
     public override void UpdateState(PlayerStateManager player)

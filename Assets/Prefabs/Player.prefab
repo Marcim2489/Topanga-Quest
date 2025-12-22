@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 850292055855697340}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.09375, y: 0.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55,6 +55,7 @@ MonoBehaviour:
   m_animator: {fileID: 6288989270089359425}
   m_spriteRenderer: {fileID: 529903484371127356}
   hitbox: {fileID: 290887589245953712}
+  deathAnimationTime: 0.5
   jump: 10
   moveInput:
     m_Name: Move Input
@@ -107,15 +108,16 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   jumpBuffer: 0.12
-  minimalJumpTime: 0.07
+  minimalJumpTime: 0.1
   coyoteTime: 0.07
-  maxFallSpeed: 200
+  maxFallSpeed: 12
   floorRayCastSize: {x: 0.23, y: 0.12}
   floorRaycastDistance: 0.2
   floorRaycastLayer:
     serializedVersion: 2
     m_Bits: 64
   jumpPressed: 0
+  canJump: 0
 --- !u!212 &529903484371127356
 SpriteRenderer:
   m_ObjectHideFlags: 0

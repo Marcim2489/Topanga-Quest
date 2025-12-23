@@ -24,6 +24,7 @@ public class PlayerStateManager : Player
     [HideInInspector]public bool jumpPressed;
     private float jumpBufferTimer;
     [HideInInspector]public bool canJump;
+    [HideInInspector]public bool enemyJumped;
 
     public override void Start()
     {
@@ -31,7 +32,7 @@ public class PlayerStateManager : Player
         ChangeState(idleState);
         jumpInput.Enable();
         moveInput.Enable();
-        hitbox.landedHit += Pulinho;
+        hitbox.landedHit += EnemyJump;
     }
 
     void Update()
@@ -96,8 +97,10 @@ public class PlayerStateManager : Player
         ChangeState(deathState);
         base.TakeDamage();
     }
-    private void Pulinho()
+
+    private void EnemyJump()
     {
+        enemyJumped = true;
         ChangeState(jumpState);
     }
 
@@ -120,9 +123,9 @@ public class PlayerStateManager : Player
             m_rigidBody.linearVelocityY = -maxFallSpeed;
         }
     }
-    // private void OnDrawGizmos()
-    // {
-    //     Gizmos.DrawWireCube(transform.position - transform.up*floorRaycastDistance,floorRayCastSize);
-    // }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireCube(transform.position - transform.up*floorRaycastDistance,floorRayCastSize);
+    }
 
 }

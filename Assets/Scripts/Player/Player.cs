@@ -18,6 +18,11 @@ public abstract class Player : MonoBehaviour
     public virtual void TakeDamage()
     {
         died?.Invoke();
+        DisableHitbox();
     }
 
+    public void DisableHitbox()
+    {
+        hitbox.gameObject.SetActive(false);
+    }
 }

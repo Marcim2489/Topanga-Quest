@@ -28,9 +28,9 @@ public class Snake : Enemy
         m_sprite.flipX = !m_sprite.flipX;
     }
 
-    // private void OnDrawGizmos()
-    // {
-    //     Gizmos.DrawWireCube(transform.position+ Vector3.up*frontCastYOffset + transform.right*frontCastDistance*facingDirection,frontCastSize);
-    //     Gizmos.DrawWireCube(transform.position+Vector3.up*bottomCastYOffset + transform.right*bottomCastDistance*facingDirection,bottomCastSize);
-    // }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireCube(transform.position+ Vector3.up*frontCastYOffset + transform.right*frontCastDistance*facingDirection,frontCastSize);
+        Gizmos.DrawWireCube(transform.position+Vector3.up*bottomCastYOffset + transform.right*bottomCastDistance*facingDirection,bottomCastSize);
+    }
 }

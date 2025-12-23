@@ -44,7 +44,7 @@ public class Bang : Enemy
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireCube(transform.position - transform.up*floorRaycastDistance,floorRayCastSize);
     }

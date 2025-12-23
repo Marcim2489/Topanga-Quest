@@ -10,6 +10,7 @@ public class PlayerDeathState : PlayerBaseState
         {
             player.m_rigidBody.linearVelocityY = 0;
         }
+        player.DisableHitbox();
     }
 
     public override void UpdateState(PlayerStateManager player)

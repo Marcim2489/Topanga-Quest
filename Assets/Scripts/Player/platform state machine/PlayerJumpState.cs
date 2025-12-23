@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerJumpState : PlayerBaseState
 {
     private float timer;
+    private float minimalTime;
+
     public override void EnterState(PlayerStateManager player)
     {
         player.m_animator.Play("PlayerJump");
@@ -10,6 +12,15 @@ public class PlayerJumpState : PlayerBaseState
         player.jumpPressed = false;
         timer = 0;
         player.canJump = false;
+        if (player.enemyJumped)
+        {
+            player.enemyJumped = false;
+            minimalTime = player.minimalJumpTime * 1.5f;
+        }
+        else
+        {
+            minimalTime = player.minimalJumpTime;
+        }
     }
 
     public override void UpdateState(PlayerStateManager player)
@@ -30,7 +41,7 @@ public class PlayerJumpState : PlayerBaseState
         }
         else
         {
-            if (player.m_rigidBody.linearVelocityY < 0 || (player.jumpInput.IsPressed() == false && timer >= player.minimalJumpTime))
+            if (player.m_rigidBody.linearVelocityY < 0 || (player.jumpInput.IsPressed() == false && timer >= minimalTime))
             {
                 player.ChangeState(player.fallState);
                 return;
@@ -41,5 +52,6 @@ public class PlayerJumpState : PlayerBaseState
     public override void ExitState(PlayerStateManager player)
     {
         timer = 0;
+        player.enemyJumped = false;
     }
 }

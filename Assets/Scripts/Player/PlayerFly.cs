@@ -25,7 +25,8 @@ public class PlayerFly : Player
         }
         flyDirection = flyInput.ReadValue<Vector2>();
         m_rigidBody.linearVelocity = flyDirection.normalized * moveSpeed * Time.deltaTime;
-        m_animator.SetInteger("Direction", (int)flyDirection.y);
+        float dir = flyDirection.y*10;
+        m_animator.SetInteger("Direction", (int)dir);
     }
 
     public override void TakeDamage()

@@ -3,13 +3,16 @@ using UnityEditor;
 
 public class ShooterDragon : Enemy
 {
-    [SerializeField]private float startUp = 1;
+    public float startUp = 0.5f;
+    public float jumpForce = 3;
+    public float moveSpeed = 3;
     [SerializeField]private DragonProjectile projectile;
     [SerializeField]private Vector2 shootPoint;
     [SerializeField]private Player player;
     [SerializeField]private bool facingLeft=true;
     private bool hasShot;
     private float timer;
+    private bool preparingShoot;
 
     public override void Start()
     {
@@ -19,13 +22,15 @@ public class ShooterDragon : Enemy
         {
             shootPoint.x *= -1;
         }
-        if (startUp <= 0)
-        {
-            Shoot();
-        }
+        
         if(player == null)
         {
             player = FindAnyObjectByType<Player>();
+        }
+        m_rigidBody.linearVelocityX = -moveSpeed;
+        if (startUp <= 0)
+        {
+            GoUp();
         }
     }
 
@@ -35,22 +40,40 @@ public class ShooterDragon : Enemy
         {
             return;
         }
+        if (preparingShoot)
+        {
+            if (m_rigidBody.linearVelocityY <= 0)
+            {
+                ShootAnimation();
+            }
+            return;
+        }
         timer += Time.deltaTime;
         if (timer >= startUp)
         {
-            ShootAnimation();
+            GoUp();
         }
+    }
+    void GoUp()
+    {
+        m_rigidBody.linearVelocityY = jumpForce;
+        m_rigidBody.gravityScale = 1;
+        m_rigidBody.linearVelocityX = 0;
+        preparingShoot = true;
     }
     void ShootAnimation()
     {
         m_animator.SetTrigger("Shoot");
-        hasShot = true;
+        m_rigidBody.gravityScale = 0;
+        m_rigidBody.linearVelocityY = 0;
     }
+
     public void Shoot()
     {
+        m_rigidBody.gravityScale = 1;
         DragonProjectile p = Instantiate(projectile,transform.position +(Vector3)shootPoint,transform.rotation);
         p.player = player;
-        m_rigidBody.gravityScale = 1;
+        hasShot = true;
     }
 
     void OnDrawGizmosSelected()

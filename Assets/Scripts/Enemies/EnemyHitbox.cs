@@ -14,4 +14,8 @@ public class EnemyHitbox : MonoBehaviour
     {
         tookHit?.Invoke();
     }
+
+    public virtual void Activate()
+    {
+    }
 }

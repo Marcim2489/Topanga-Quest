@@ -309,25 +309,41 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 1D Axis
-      m_Id: a92cb704-94f9-4c4d-8fbf-d80df65c036f
-      m_Path: 1DAxis
+    - m_Name: 2D Vector
+      m_Id: d5934a6d-9a5a-4661-8f92-607aaf7e0830
+      m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Fly Input
       m_Flags: 4
-    - m_Name: negative
-      m_Id: 40abc191-5440-4826-a265-4e72e2855855
+    - m_Name: up
+      m_Id: cfe99798-1291-49ea-a2e7-a37e34b1dd00
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Fly Input
+      m_Flags: 8
+    - m_Name: down
+      m_Id: ac9af49b-fe06-47fb-bbab-1b03d3ad26c4
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Fly Input
       m_Flags: 8
-    - m_Name: positive
-      m_Id: e29711dc-dc28-45d7-bb6a-48c71cfb9258
-      m_Path: <Keyboard>/w
+    - m_Name: left
+      m_Id: d13e19f5-ac57-429c-992e-23f605e9a0e6
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Fly Input
+      m_Flags: 8
+    - m_Name: right
+      m_Id: d3e29e56-98f2-4773-8156-00683e82b19f
+      m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -415,7 +431,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!58 &3609576721313562217
 CircleCollider2D:
   m_ObjectHideFlags: 0

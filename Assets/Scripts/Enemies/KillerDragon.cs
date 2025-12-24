@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class KillerDragon : EnemyHitbox
+public class KillerDragon : Enemy
 {
-    [SerializeField]private float moveSpeed = 3;
-    [SerializeField]private Rigidbody2D m_rigidBody;
+    public float moveSpeed = 3;
 
-    void Start()
+    public override void Start()
     {
         m_rigidBody.linearVelocityX = -moveSpeed;
     }

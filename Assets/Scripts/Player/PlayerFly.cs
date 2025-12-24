@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerFly : Player
 {
     [SerializeField] private InputAction flyInput;
-    private float flyDirection;
+    private Vector2 flyDirection;
     private bool dead;
 
     public override void Start()
@@ -23,16 +23,9 @@ public class PlayerFly : Player
         {
             return;
         }
-        flyDirection = flyInput.ReadValue<float>();
-        if (flyDirection > 0)
-        {
-            flyDirection = 1;
-        } else if (flyDirection < 0)
-        {
-            flyDirection = -1;
-        }
-        m_rigidBody.linearVelocityY = flyDirection * moveSpeed * Time.deltaTime;
-        m_animator.SetInteger("Direction", (int)flyDirection);
+        flyDirection = flyInput.ReadValue<Vector2>();
+        m_rigidBody.linearVelocity = flyDirection.normalized * moveSpeed * Time.deltaTime;
+        m_animator.SetInteger("Direction", (int)flyDirection.y);
     }
 
     public override void TakeDamage()

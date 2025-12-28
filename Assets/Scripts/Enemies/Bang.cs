@@ -7,10 +7,14 @@ public class Bang : Enemy
     [SerializeField]private LayerMask floorRaycastLayer;
     [SerializeField]private float jump = 6;
     [SerializeField]private float horizontalForce = 3;
-    private bool goingLeft = true;
+    private int direction = -1;
 
-    void Update()
+    void FixedUpdate()
     {
+        if (m_rigidBody.linearVelocityY > 0)
+        {
+            return;
+        }
         if (IsGrounded())
             {
                 Jump();
@@ -19,18 +23,13 @@ public class Bang : Enemy
 
     void Jump()
     {
+        
+        direction *= -1;
         m_rigidBody.linearVelocityY = jump;
-        if (goingLeft)
-        {
-            m_rigidBody.linearVelocityX = horizontalForce;
-            goingLeft = false;
-        }
-        else
-        {
-            m_rigidBody.linearVelocityX = -horizontalForce;
-            goingLeft = true;
-        }
-        m_animator.SetBool("GoingLeft", goingLeft);
+        
+        m_rigidBody.linearVelocityX = horizontalForce * direction;
+        
+        m_animator.SetInteger("Direction", direction);
     }
     private bool IsGrounded()
     {

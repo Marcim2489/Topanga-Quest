@@ -9,8 +9,9 @@ public class LevelEnd : MonoBehaviour
         PlayerHitbox player = collision.gameObject.GetComponent<PlayerHitbox>();
         if (player != null)
         {
+            FindFirstObjectByType<LevelManager>().WhatWasCollected();
             GameManager.Instance.lastLevelPlayed = SceneManager.GetActiveScene().name;
-            GameManager.Instance.completedLevels.Append<string>(SceneManager.GetActiveScene().name);
+            GameManager.Instance.completedLevels.Add(SceneManager.GetActiveScene().name);
             LevelLoader.Instance.LoadLevel("CompletedLevel");
         }
     }

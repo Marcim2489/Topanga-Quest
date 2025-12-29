@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     [HideInInspector]public int coinsColected;
     [HideInInspector]public bool rubyColected;
-    private int totalCoins;
+    [HideInInspector]public int totalCoins;
     void Start()
     {
         GameManager.Instance.lastLevelPlayed = SceneManager.GetActiveScene().name;

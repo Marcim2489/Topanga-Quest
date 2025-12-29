@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public List<string> levelsWithAllCoins = new List<string>();
     [HideInInspector] public List<string> levelsWithRuby = new List<string>();
     [HideInInspector] public string lastLevelPlayed = "Level 1";
+    [HideInInspector]public int lastLevelCoins;
+    [HideInInspector]public int lastLevelTotalCoins;
+    [HideInInspector]public bool lastLevelRuby;
 
     void Awake()
     {

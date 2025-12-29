@@ -20,12 +20,10 @@ public class PlayerStateManager : Player
     public Vector2 floorRayCastSize;
     public float floorRaycastDistance;
     public LayerMask floorRaycastLayer;
-    
     [HideInInspector]public bool jumpPressed;
     private float jumpBufferTimer;
     [HideInInspector]public bool canJump;
     [HideInInspector]public bool enemyJumped;
-
     public override void Start()
     {
         base.Start();

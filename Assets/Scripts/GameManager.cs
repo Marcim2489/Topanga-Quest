@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get;private set;}
-    public string[] levels {get;private set;} = {"Level 1", "DragonFly", "WaterLevel","Level4"};
+    public string[] levels {get;private set;} = {"Level4", "DragonFly", "WaterLevel","Level 1"};
     [HideInInspector] public List<string> completedLevels = new List<string>();
     [HideInInspector] public List<string> levelsWithAllCoins = new List<string>();
     [HideInInspector] public List<string> levelsWithRuby = new List<string>();
@@ -21,5 +21,15 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public bool CollectedAllCoins(string levelName)
+    {
+        return levelsWithAllCoins.Contains(levelName);
+    }
+
+    public bool CollectedRuby(string levelName)
+    {
+        return levelsWithRuby.Contains(levelName);
     }
 }

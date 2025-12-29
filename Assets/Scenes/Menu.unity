@@ -248,6 +248,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5874548037736666421, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
+      propertyPath: m_CropFrame
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874548037736666421, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
+      propertyPath: m_GridSnapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6509585573048614972, guid: 2845ef463329fea4a84586382e8e9468, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

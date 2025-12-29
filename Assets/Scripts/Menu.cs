@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
 
     void ExitPressed()
     {
-        EditorApplication.isPlaying = false;
+        // EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }

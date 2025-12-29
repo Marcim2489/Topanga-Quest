@@ -18,7 +18,6 @@ public class WinLayout : MonoBehaviour
         int nextLevelIndex = 1 + System.Array.FindIndex<string>(allLevels, level =>level == GameManager.Instance.lastLevelPlayed);
         if (nextLevelIndex > allLevels.Length-1)
         {
-            
             BackToMenu();
             return;
         }

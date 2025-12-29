@@ -84,6 +84,6 @@ public class Skullor : Enemy
         playerDead = true;
     }
     private void OnDrawGizmosSelected() {
-        Handles.DrawWireDisc(transform.position,Vector3.forward,detectorRadius);
+        // Handles.DrawWireDisc(transform.position,Vector3.forward,detectorRadius);
     }
 }

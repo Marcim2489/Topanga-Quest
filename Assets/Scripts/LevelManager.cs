@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 
     private bool CollectedAllCoins()
     {
-        if (coinsColected >= totalCoins)
+        if (coinsColected >= totalCoins && totalCoins!=0)
         {
             return true;
         }

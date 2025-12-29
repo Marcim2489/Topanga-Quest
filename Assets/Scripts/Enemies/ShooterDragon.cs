@@ -78,6 +78,6 @@ public class ShooterDragon : Enemy
 
     void OnDrawGizmosSelected()
     {
-        Handles.DrawWireDisc(transform.position +(Vector3)shootPoint,Vector3.forward,0.1f);
+        // Handles.DrawWireDisc(transform.position +(Vector3)shootPoint,Vector3.forward,0.1f);
     }
 }

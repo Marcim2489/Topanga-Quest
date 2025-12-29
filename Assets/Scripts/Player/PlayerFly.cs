@@ -5,7 +5,6 @@ public class PlayerFly : Player
 {
     [SerializeField] private InputAction flyInput;
     private Vector2 flyDirection;
-    private bool dead;
 
     public override void Start()
     {
@@ -24,7 +23,7 @@ public class PlayerFly : Player
             return;
         }
         flyDirection = flyInput.ReadValue<Vector2>();
-        m_rigidBody.linearVelocity = flyDirection.normalized * moveSpeed * Time.deltaTime;
+        m_rigidBody.linearVelocity = flyDirection.normalized * moveSpeed;
         float dir = flyDirection.y*10;
         m_animator.SetInteger("Direction", (int)dir);
     }
@@ -38,6 +37,7 @@ public class PlayerFly : Player
         {
             m_rigidBody.linearVelocityY = 0;
         }
+        m_rigidBody.linearVelocityX = 0;
         m_rigidBody.gravityScale = 1;
     }
 }

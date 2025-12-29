@@ -27,7 +27,7 @@ public class PlayerWater : Player
             return;
         }
         float direction = moveInput.ReadValue<float>();
-        m_rigidBody.linearVelocityX = moveSpeed*direction*Time.deltaTime;
+        m_rigidBody.linearVelocityX = moveSpeed*direction;
         
         if (m_rigidBody.linearVelocityX > 0)
         {

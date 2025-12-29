@@ -27,7 +27,7 @@ public class PlayerJumpState : PlayerBaseState
     {
         player.Move();
         timer+=Time.deltaTime;
-        if (player.IsGrounded())
+        if (player.IsGrounded()&& player.m_rigidBody.linearVelocityY<=0)
         {
             if (player.m_rigidBody.linearVelocityX != 0)
             {

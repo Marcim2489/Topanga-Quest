@@ -9,7 +9,7 @@ public class Snake : Enemy
     [SerializeField] private float bottomCastDistance;
     [SerializeField] private float bottomCastYOffset;
     [SerializeField] private LayerMask castLayer;
-    [SerializeField] private float movesSpeed = 100;
+    [SerializeField] private float movesSpeed = 3;
     private int facingDirection = 1;
     
     private void Update()
@@ -19,7 +19,7 @@ public class Snake : Enemy
         {
             Flip();
         }
-        m_rigidBody.linearVelocityX = movesSpeed*facingDirection*Time.deltaTime;
+        m_rigidBody.linearVelocityX = movesSpeed*facingDirection;
     }
 
     private void Flip()

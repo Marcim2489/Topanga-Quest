@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -81,7 +82,7 @@ public class PlayerStateManager : Player
             return;
         }
 
-        m_rigidBody.linearVelocityX = moveSpeed*direction*Time.deltaTime;
+        m_rigidBody.linearVelocityX = moveSpeed*direction;
         if (m_rigidBody.linearVelocityX > 0)
         {
             m_spriteRenderer.flipX = false;

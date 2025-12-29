@@ -12,8 +12,4 @@ public class CannonBall : EnemyHitbox
         Destroy(gameObject,lifeTime);
     }
 
-    void Update()
-    {
-        m_rigidBody.linearVelocity = transform.up * speed;
-    }
 }

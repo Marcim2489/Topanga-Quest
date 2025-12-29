@@ -63,7 +63,7 @@ MonoBehaviour:
   castLayer:
     serializedVersion: 2
     m_Bits: 64
-  movesSpeed: 100
+  movesSpeed: 2
 --- !u!212 &3361712954122598584
 SpriteRenderer:
   m_ObjectHideFlags: 0

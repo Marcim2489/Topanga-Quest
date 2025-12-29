@@ -10,7 +10,7 @@ public class Menu : MonoBehaviour
     {
         menuLayout = GetComponent<UIDocument>();
         menuLayout.rootVisualElement.Q<Button>("StartButton").clicked += StartPressed;
-        menuLayout.rootVisualElement.Q<Button>("ExitButton").clicked += ExitPressed;
+        // menuLayout.rootVisualElement.Q<Button>("ExitButton").clicked += ExitPressed;
     }
 
 
@@ -19,9 +19,9 @@ public class Menu : MonoBehaviour
         LevelLoader.Instance.LoadLevel("LevelSelection");
     }
 
-    void ExitPressed()
-    {
-        // EditorApplication.isPlaying = false;
-        Application.Quit();
-    }
+    // void ExitPressed()
+    // {
+    //     // EditorApplication.isPlaying = false;
+    //     Application.Quit();
+    // }
 }

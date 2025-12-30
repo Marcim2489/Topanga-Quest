@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8115285937052199083}
   - component: {fileID: 3643726349908416811}
   m_Layer: 0
-  m_Name: Level 1
+  m_Name: Level Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 6699602170934644792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.625, y: -9.313226e-10, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -134,13 +134,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Level4
-  unlocked: 1
+  unlocked: 0
+  containsLevel: 1
   levelAbove: {fileID: 0}
   levelBelow: {fileID: 0}
   levelLeft: {fileID: 0}
   levelRight: {fileID: 0}
   nextLevel: {fileID: 0}
   lockSprite: {fileID: 1446307448341304450}
+  spriteRenderer: {fileID: 3643726349908416811}
+  completedSprite: {fileID: 957120471, guid: 8a19c4760b65e2944838d530edfc6e24, type: 3}
 --- !u!212 &3643726349908416811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -185,7 +188,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5366743735207328185, guid: 8a19c4760b65e2944838d530edfc6e24, type: 3}
+  m_Sprite: {fileID: 361477486, guid: 8a19c4760b65e2944838d530edfc6e24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

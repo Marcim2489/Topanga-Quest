@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get;private set;}
-    public string[] levels {get;private set;} = {"Level4", "DragonFly", "WaterLevel","Level 1"};
     [HideInInspector] public List<string> completedLevels = new List<string>();
     [HideInInspector] public List<string> levelsWithAllCoins = new List<string>();
     [HideInInspector] public List<string> levelsWithRuby = new List<string>();
@@ -22,7 +21,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        lastLevelPlayed = "Level4";
+        // lastLevelPlayed = "Level4";
         
         Instance = this;
         DontDestroyOnLoad(gameObject);

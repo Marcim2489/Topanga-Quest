@@ -22,6 +22,6 @@ public class WinInterfaceManager : MonoBehaviour
 
     public void Continue()
     {
-        LevelLoader.Instance.LoadLevel("LevelSelection");
+        LevelLoader.Instance.LoadLevel("LevelMap");
     }
 }

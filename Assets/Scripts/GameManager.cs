@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public List<string> completedLevels = new List<string>();
     [HideInInspector] public List<string> levelsWithAllCoins = new List<string>();
     [HideInInspector] public List<string> levelsWithRuby = new List<string>();
-    [HideInInspector] public string lastLevelPlayed = "Level 1";
+    [HideInInspector] public string lastLevelPlayed;
     [HideInInspector]public int lastLevelCoins;
     [HideInInspector]public int lastLevelTotalCoins;
     [HideInInspector]public bool lastLevelRuby;
@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        lastLevelPlayed = "Level4";
+        
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }

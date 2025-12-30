@@ -4,6 +4,6 @@ public class MenuButtonManager : MonoBehaviour
 {
     public void StartGame()
     {
-         LevelLoader.Instance.LoadLevel("LevelSelection");
+         LevelLoader.Instance.LoadLevel("LevelMap");
     }
 }

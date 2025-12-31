@@ -32,10 +32,12 @@ public class PlayerFallState : PlayerBaseState
             if (player.m_rigidBody.linearVelocityX != 0)
             {
                 player.ChangeState(player.walkState);
+                player.PlayAudio(player.landSFX,0.3f);
                 return;
             } else
             {
                 player.ChangeState(player.idleState);
+                player.PlayAudio(player.landSFX,0.3f);
                 return;
             }
         }

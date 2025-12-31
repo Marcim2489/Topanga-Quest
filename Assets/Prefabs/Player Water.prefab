@@ -109,6 +109,9 @@ MonoBehaviour:
     m_Flags: 0
   maxFallSpeed: 3
   bubbleParticle: {fileID: 8290781580741189799, guid: 59c56d7d76a3d09409dbdced86ad934e, type: 3}
+  sfxPlayer: {fileID: 7098947694246509766, guid: 17696be4be13f114a8a1af82121aba10, type: 3}
+  jumpSFX: {fileID: 8300000, guid: 5e3eaa34f252e8e448841da1b8bfd8f6, type: 3}
+  deathSFX: {fileID: 8300000, guid: 53c7b02890535214483970141bded425, type: 3}
 --- !u!212 &8949805157180877731
 SpriteRenderer:
   m_ObjectHideFlags: 0

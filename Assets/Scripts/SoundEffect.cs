@@ -3,7 +3,7 @@ using UnityEngine.Audio;
 
 public class SoundEffect : MonoBehaviour
 {
-    public AudioSource sfxPlayer;
+    [SerializeField]AudioSource sfxPlayer;
 
     void Update()
     {
@@ -16,8 +16,9 @@ public class SoundEffect : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void PlaySFX(AudioResource sfx)
+    public void PlaySFX(AudioResource sfx, float volume)
     {
+        sfxPlayer.volume = volume;
         sfxPlayer.resource = sfx;
         sfxPlayer.Play();
     }

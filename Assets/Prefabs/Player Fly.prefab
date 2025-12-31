@@ -295,12 +295,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60638b2aff4b1954caaaf9d46ea17ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 250
+  moveSpeed: 280
   m_rigidBody: {fileID: 1072420228213370120}
   m_animator: {fileID: 5954137672469356310}
   m_spriteRenderer: {fileID: 1128049897762980325}
   hitbox: {fileID: 6319160225197554356}
   deathAnimationTime: 1.25
+  sfxPlayer: {fileID: 7098947694246509766, guid: 17696be4be13f114a8a1af82121aba10, type: 3}
+  deathSFX: {fileID: 8300000, guid: 53c7b02890535214483970141bded425, type: 3}
   flyInput:
     m_Name: Fly Input
     m_Type: 0

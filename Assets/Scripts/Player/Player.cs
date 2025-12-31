@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public abstract class Player : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public abstract class Player : MonoBehaviour
     [SerializeField] protected PlayerHitbox hitbox;
     public event System.Action died;
     public float deathAnimationTime = 1;
+    public SoundEffect sfxPlayer;
+    public AudioResource deathSFX;
     public virtual void Start()
     {
         hitbox.tookHit += TakeDamage;
@@ -19,10 +22,17 @@ public abstract class Player : MonoBehaviour
     {
         died?.Invoke();
         DisableHitbox();
+        BackgroundMusicPlayer.Instance.StopMusic();
+        PlayAudio(deathSFX,1);
     }
 
     public void DisableHitbox()
     {
         hitbox.gameObject.SetActive(false);
+    }
+    public void PlayAudio(AudioResource sfx, float volume)
+    {
+        SoundEffect s = Instantiate(sfxPlayer);
+        s.PlaySFX(sfx, volume);
     }
 }

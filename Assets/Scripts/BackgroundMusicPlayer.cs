@@ -30,4 +30,15 @@ public class BackgroundMusicPlayer : MonoBehaviour
     {
         audioPlayer.loop = l;
     }
+    
+    public void SetVolume(float volume)
+    {
+        audioPlayer.volume = volume;
+    }
+
+    public void StopMusic()
+    {
+        audioPlayer.resource = null;
+        audioPlayer.Stop();
+    }
 }

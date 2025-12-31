@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class PlayerWater : Player
 {
@@ -9,6 +10,8 @@ public class PlayerWater : Player
     [SerializeField] private float maxFallSpeed = 200;
     [SerializeField] private ParticleSystem bubbleParticle;
     private bool dead;
+    [SerializeField] private AudioResource jumpSFX;
+
     public override void Start()
     {
         base.Start();
@@ -41,6 +44,7 @@ public class PlayerWater : Player
         {
             m_rigidBody.linearVelocityY = jump;
             m_animator.SetTrigger("jump");
+            PlayAudio(jumpSFX,0.7f);
         }
         
         if(m_rigidBody.linearVelocityY < -maxFallSpeed)
@@ -62,6 +66,7 @@ public class PlayerWater : Player
         }
         jumpInput.Disable();
         moveInput.Disable();
+        PlayAudio(deathSFX,1);
         dead = true;
     }
 }

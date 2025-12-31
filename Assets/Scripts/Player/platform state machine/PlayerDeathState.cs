@@ -11,6 +11,7 @@ public class PlayerDeathState : PlayerBaseState
             player.m_rigidBody.linearVelocityY = 0;
         }
         player.DisableHitbox();
+        player.PlayAudio(player.deathSFX,1);
     }
 
     public override void UpdateState(PlayerStateManager player)

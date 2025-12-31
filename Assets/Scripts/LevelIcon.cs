@@ -18,7 +18,7 @@ public class LevelIcon : MonoBehaviour
     private LevelMapManager levelMapManager;
     void Start()
     {
-        if (unlocked)
+        if (unlocked|| levelScene == GameManager.Instance.lastLevelPlayed)
         {
             Unlock();
         }

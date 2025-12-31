@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class PlayerStateManager : Player
@@ -25,6 +26,11 @@ public class PlayerStateManager : Player
     private float jumpBufferTimer;
     [HideInInspector]public bool canJump;
     [HideInInspector]public bool enemyJumped;
+
+    public AudioResource jumpSFX;
+    public AudioResource hitEnemySFX;
+    public AudioResource landSFX;
+
     public override void Start()
     {
         base.Start();
@@ -122,6 +128,9 @@ public class PlayerStateManager : Player
             m_rigidBody.linearVelocityY = -maxFallSpeed;
         }
     }
+
+    
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireCube(transform.position - transform.up*floorRaycastDistance,floorRayCastSize);

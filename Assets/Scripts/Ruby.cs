@@ -11,7 +11,7 @@ public class Ruby : MonoBehaviour
         {
             FindFirstObjectByType<LevelManager>().rubyColected = true;
             SoundEffect s = Instantiate(sfxPlayer,transform.position,transform.rotation);
-            s.PlaySFX(sound);
+            s.PlaySFX(sound,1);
             Destroy(gameObject);
         }
     }

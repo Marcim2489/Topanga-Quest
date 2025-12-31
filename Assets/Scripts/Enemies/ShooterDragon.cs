@@ -71,7 +71,7 @@ public class ShooterDragon : Enemy
     public void Shoot()
     {
         m_rigidBody.gravityScale = 1;
-        DragonProjectile p = Instantiate(projectile,transform.position +(Vector3)shootPoint,transform.rotation);
+        DragonProjectile p = Instantiate(projectile,transform.position +(Vector3)new Vector2(shootPoint.x * transform.right.x, shootPoint.y),transform.rotation);
         p.player = player;
         hasShot = true;
     }

@@ -14,11 +14,13 @@ public class PlayerJumpState : PlayerBaseState
         player.canJump = false;
         if (player.enemyJumped)
         {
+            player.PlayAudio(player.hitEnemySFX,0.3f);
             player.enemyJumped = false;
             minimalTime = player.minimalJumpTime * 1.5f;
         }
         else
         {
+            player.PlayAudio(player.jumpSFX,0.28f);
             minimalTime = player.minimalJumpTime;
         }
     }

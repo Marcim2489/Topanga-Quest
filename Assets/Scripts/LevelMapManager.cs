@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class LevelMapManager : MonoBehaviour
 {
@@ -12,13 +13,14 @@ public class LevelMapManager : MonoBehaviour
     [SerializeField]private TextMeshProUGUI levelNameText;
     [SerializeField]private GameObject coinImage;
     [SerializeField]private GameObject rubyImage;
-
+    [SerializeField]private SoundEffect sfxPlayer;
+    [SerializeField]private AudioResource selectSFX;
     void Update()
     {
         if (levelSelected)
         {
             timer += Time.deltaTime;
-            if(timer>= 0.5f)
+            if(timer>= 1f)
             {
                 LevelLoader.Instance.LoadLevel(currentLevelSelected.levelScene);
             }
@@ -42,6 +44,9 @@ public class LevelMapManager : MonoBehaviour
         {
             player.animator.SetTrigger("Selected");
             levelSelected = true;
+            BackgroundMusicPlayer.Instance.StopMusic();
+            SoundEffect s = Instantiate(sfxPlayer);
+            s.PlaySFX(selectSFX,1);
             return;
         }
         

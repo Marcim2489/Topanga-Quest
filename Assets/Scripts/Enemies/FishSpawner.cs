@@ -6,6 +6,7 @@ public class FishSpawner : MonoBehaviour
     [SerializeField]private float spawnCooldown = 1;
     [SerializeField]private float startUp = 0;
     [SerializeField]private bool faceLeft;
+    [SerializeField]private float fishLifeTime = 10;
     private bool canSpawn;
     private float timer;
 
@@ -50,6 +51,7 @@ public class FishSpawner : MonoBehaviour
         {
             f.SetDirectionAndSwim(1);
         }
+        Destroy(f.gameObject,fishLifeTime);
         timer = 0;
     }
 }

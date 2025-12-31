@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1296daba03a3548a52cca28c712816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxPlayer: {fileID: 7098947694246509766, guid: 17696be4be13f114a8a1af82121aba10, type: 3}
+  sound: {fileID: 8300000, guid: bd6432515bd76d145adb57cb83f27fac, type: 3}
 --- !u!212 &4020155220423565078
 SpriteRenderer:
   m_ObjectHideFlags: 0

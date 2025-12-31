@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6333047450651452523}
+  - component: {fileID: 6226237058097526810}
   - component: {fileID: 9211502425944974558}
   - component: {fileID: 1277269494519663926}
-  - component: {fileID: 6226237058097526810}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -34,6 +34,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6226237058097526810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809553892696352452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b27e43630089148a0422d168d9d143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxPlayer: {fileID: 7098947694246509766, guid: 17696be4be13f114a8a1af82121aba10, type: 3}
+  sound: {fileID: 8300000, guid: 7b796ef0b0cb6df47a62e7ff2c06874e, type: 3}
 --- !u!212 &9211502425944974558
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -135,15 +149,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.1875, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &6226237058097526810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3809553892696352452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b27e43630089148a0422d168d9d143, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

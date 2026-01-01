@@ -6,7 +6,7 @@ public class BeaterFish : EnemyHitbox
     private int direction = 1;
     [SerializeField]private Rigidbody2D m_rigidBody;
     [SerializeField]private float moveSpeed = 3;
-    [SerializeField]private float swimCooldown = 1;
+    public float swimCooldown = 1;
     [SerializeField]private SpriteRenderer m_sprite;
     private float timer;
 

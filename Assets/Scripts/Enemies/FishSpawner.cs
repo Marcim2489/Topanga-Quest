@@ -3,7 +3,8 @@ using UnityEngine;
 public class FishSpawner : MonoBehaviour
 {
     [SerializeField]private BeaterFish fish;
-    [SerializeField]private float spawnCooldown = 1;
+    [SerializeField]private float spawnCooldown = 1.5f;
+    [SerializeField]private float fishSwimCooldown = 1.5f;
     [SerializeField]private float startUp = 0;
     [SerializeField]private bool faceLeft;
     [SerializeField]private float fishLifeTime = 10;
@@ -51,6 +52,7 @@ public class FishSpawner : MonoBehaviour
         {
             f.SetDirectionAndSwim(1);
         }
+        f.swimCooldown = fishSwimCooldown;
         Destroy(f.gameObject,fishLifeTime);
         timer = 0;
     }

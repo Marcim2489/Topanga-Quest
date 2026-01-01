@@ -50,7 +50,7 @@ MonoBehaviour:
   takesDamage: 0
   m_rigidBody: {fileID: 3263048062409815001}
   moveSpeed: 4
-  swimCooldown: 1
+  swimCooldown: 1.5
   m_sprite: {fileID: 898108625558087089}
 --- !u!212 &898108625558087089
 SpriteRenderer:

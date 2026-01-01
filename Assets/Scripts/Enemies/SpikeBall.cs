@@ -6,7 +6,7 @@ public class SpikeBall : EnemyHitbox
     [SerializeField]private float distance = 0.5f;
     [SerializeField]private float moveSpeed = 2;
     [SerializeField]private Rigidbody2D m_rigidBody;
-    private int direction = 1;
+    [SerializeField]private int direction = 1;
     private float lastPosition;
     private float distanceMoved;
     private Vector3 initialPosition;
@@ -79,11 +79,11 @@ public class SpikeBall : EnemyHitbox
         
         if (vertical)
         {
-            Gizmos.DrawLine(initialPosition, initialPosition + Vector3.up* distance);
+            Gizmos.DrawLine(initialPosition, initialPosition + Vector3.up* distance*direction);
         }
         else
         {
-            Gizmos.DrawLine(initialPosition, initialPosition + Vector3.right* distance);
+            Gizmos.DrawLine(initialPosition, initialPosition + Vector3.right* distance*direction);
         }
         
     }

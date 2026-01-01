@@ -5,7 +5,7 @@ public class FishSpawner : MonoBehaviour
     [SerializeField]private BeaterFish fish;
     [SerializeField]private float spawnCooldown = 1.5f;
     [SerializeField]private float fishSwimCooldown = 1.5f;
-    [SerializeField]private float startUp = 0;
+    [SerializeField]private FishSpawnerTrigger trigger;
     [SerializeField]private bool faceLeft;
     [SerializeField]private float fishLifeTime = 10;
     private bool canSpawn;
@@ -13,28 +13,18 @@ public class FishSpawner : MonoBehaviour
 
     void Start()
     {
-        if (startUp <= 0)
-        {
-            canSpawn = true;
-            timer = spawnCooldown;
-        }
+        trigger.playerEntered += PlayerEntered;
+        trigger.playerExited += PlayerExited;
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
         if (canSpawn == false)
         {
-            if (timer >= startUp)
-            {
-                canSpawn = true;
-                timer = spawnCooldown;
-            }
-            else
-            {
-                return;
-            }
+            return;
         }
+        timer += Time.deltaTime;
+        
         if (timer >= spawnCooldown)
         {
             SpawnFish();
@@ -54,6 +44,18 @@ public class FishSpawner : MonoBehaviour
         }
         f.swimCooldown = fishSwimCooldown;
         Destroy(f.gameObject,fishLifeTime);
+        timer = 0;
+    }
+
+    void PlayerEntered()
+    {
+        canSpawn = true;
+        timer = 0;
+    }
+
+    void PlayerExited()
+    {
+        canSpawn = false;
         timer = 0;
     }
 }

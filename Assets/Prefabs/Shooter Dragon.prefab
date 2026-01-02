@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4220155045854207671}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.28125, y: -4.46875, z: 0.034592144}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56,6 +56,7 @@ MonoBehaviour:
   m_animator: {fileID: 801765936535520981}
   startUp: 1
   jumpForce: 9
+  moveSpeed: 3
   projectile: {fileID: 2302435982175107585, guid: 715ebf7894b39ef499371f05968806ab, type: 3}
   shootPoint: {x: -0.18, y: -0.05}
   player: {fileID: 0}

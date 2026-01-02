@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DragonProjectile : EnemyHitbox
 {
-    [SerializeField]private float lifeTime = 5;
+    [SerializeField]private float lifeTime = 10;
     [SerializeField]private Rigidbody2D m_rigidBody;
     [SerializeField]private float speed = 2;
     public Player player;

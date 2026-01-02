@@ -40,5 +40,10 @@ public class PlayerFly : Player
         }
         m_rigidBody.linearVelocityX = 0;
         m_rigidBody.gravityScale = 1;
+        foreach(CircleCollider2D circle in GetComponents<CircleCollider2D>())
+        {
+            Destroy(circle);
+        }
+        ;
     }
 }

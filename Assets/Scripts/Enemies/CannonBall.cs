@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CannonBall : EnemyHitbox
 {
-    [SerializeField]private float speed = 2;
-    [SerializeField]private Rigidbody2D m_rigidBody;
+    public float speed = 2;
+    public Rigidbody2D m_rigidBody;
     public float lifeTime = 5;
-    void Start()
+    public void Shoot()
     {
         takesDamage = false;
         m_rigidBody.linearVelocity = transform.up * speed;

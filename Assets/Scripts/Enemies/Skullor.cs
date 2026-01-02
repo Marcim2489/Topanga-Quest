@@ -9,6 +9,7 @@ public class Skullor : Enemy
     [SerializeField]private float movesSpeed = 2;
     [SerializeField]private Player player;
     [SerializeField]private ParticleSystem particles;
+    [SerializeField]private AudioSource audioPlayer;
     private bool following;
     private bool exploding;
     private float timer;
@@ -66,16 +67,22 @@ public class Skullor : Enemy
     }
     private void Explode()
     {
-        hitbox.takesDamage = false;
+        audioPlayer.Play();
         exploding = true;
         m_animator.SetTrigger("Explode");
         particles.Stop();
         m_rigidBody.linearVelocity = Vector3.zero;
     }
-
+    public void Explosion()
+    {
+        hitbox.takesDamage = false;
+    }
     public override void TakeDamage()
     {
-        // base.TakeDamage();
+        if (exploding)
+        {
+            return;
+        }
         Explode();
     }
 
@@ -84,6 +91,6 @@ public class Skullor : Enemy
         playerDead = true;
     }
     private void OnDrawGizmosSelected() {
-        // Handles.DrawWireDisc(transform.position,Vector3.forward,detectorRadius);
+        Handles.DrawWireDisc(transform.position,Vector3.forward,detectorRadius);
     }
 }

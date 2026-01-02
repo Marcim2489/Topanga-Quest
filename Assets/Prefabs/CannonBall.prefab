@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   takesDamage: 0
-  speed: 2
+  speed: 4
   m_rigidBody: {fileID: 8767686395402914808}
+  lifeTime: 5
 --- !u!50 &8767686395402914808
 Rigidbody2D:
   serializedVersion: 5

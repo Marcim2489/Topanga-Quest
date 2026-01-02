@@ -4,7 +4,10 @@ public class Cannon : MonoBehaviour
 {
     [SerializeField]private float shotCooldown = 1;
     [SerializeField]private float startUp = 0;
-    [SerializeField]private EnemyHitbox projectile;
+    [SerializeField]private CannonBall projectile;
+    [SerializeField]private float projectileSpeed = 4;
+    [SerializeField]private float projectileLifeTime = 5;
+    [SerializeField]private AudioSource audioPlayer;
     private float timer;
     private bool canShoot;
 
@@ -17,7 +20,7 @@ public class Cannon : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         timer += Time.deltaTime;
         if (canShoot == false)
@@ -35,7 +38,11 @@ public class Cannon : MonoBehaviour
         
         if(timer >= shotCooldown)
         {
-            Instantiate(projectile, transform.position, transform.rotation);
+            CannonBall c =Instantiate(projectile, transform.position, transform.rotation);
+            c.speed = projectileSpeed;
+            c.lifeTime = projectileLifeTime;
+            c.Shoot();
+            audioPlayer.Play();
             timer = 0;
         }
     }

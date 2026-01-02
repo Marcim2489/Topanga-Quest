@@ -11,6 +11,7 @@ public class LevelMapManager : MonoBehaviour
     private bool levelSelected;
     private float timer;
     [SerializeField]private TextMeshProUGUI levelNameText;
+    [SerializeField]private GameObject panel;
     [SerializeField]private GameObject coinImage;
     [SerializeField]private GameObject rubyImage;
     [SerializeField]private SoundEffect sfxPlayer;
@@ -98,9 +99,11 @@ public class LevelMapManager : MonoBehaviour
         if(lvl.containsLevel == false)
         {
             levelNameText.gameObject.SetActive(false);
+            panel.gameObject.SetActive(false);
             return;
         }
         levelNameText.gameObject.SetActive(true);
+        panel.gameObject.SetActive(true);
         levelNameText.text = lvl.levelName;
     }
 
@@ -129,5 +132,6 @@ public class LevelMapManager : MonoBehaviour
         coinImage.SetActive(false);
         rubyImage.SetActive(false);
         levelNameText.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false);
     }
 }

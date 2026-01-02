@@ -16,6 +16,12 @@ public class Activator : MonoBehaviour
         if (spawner != null)
         {
             spawner.Spawn();
+            return;
+        }
+        SnowIntensifier s = collision.gameObject.GetComponent<SnowIntensifier>();
+        if(s!= null)
+        {
+            s.Trigger();
         }
     }
 }

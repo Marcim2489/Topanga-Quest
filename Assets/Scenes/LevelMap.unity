@@ -11950,7 +11950,7 @@ PrefabInstance:
       objectReference: {fileID: 835898502}
     - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
       propertyPath: levelName
-      value: Lake
+      value: Salty Lake
       objectReference: {fileID: 0}
     - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
       propertyPath: nextLevel
@@ -12118,6 +12118,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4996418801844520432, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340862651104772712, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340862651104772712, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340862651104772712, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340862651104772712, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
+      propertyPath: TrackerSettings.RotationDamping.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340862651104772712, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
+      propertyPath: TrackerSettings.RotationDamping.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340862651104772712, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
+      propertyPath: TrackerSettings.RotationDamping.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5799180690670521690, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
@@ -12506,7 +12530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
       propertyPath: levelName
-      value: The Tower
+      value: Evil Tower
       objectReference: {fileID: 0}
     - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
       propertyPath: levelBelow
@@ -15908,8 +15932,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
       propertyPath: levelName
-      value: The cliff
+      value: Dragon's Canyon
       objectReference: {fileID: 0}
+    - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 754815667}
     - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
       propertyPath: levelAbove
       value: 
@@ -16884,7 +16912,7 @@ PrefabInstance:
       objectReference: {fileID: 280337969}
     - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
       propertyPath: levelName
-      value: Evil level
+      value: Abandoned Ruins
       objectReference: {fileID: 0}
     - target: {fileID: 8115285937052199083, guid: 78af7803901d3bc4a8e3457ebca3dc5e, type: 3}
       propertyPath: nextLevel

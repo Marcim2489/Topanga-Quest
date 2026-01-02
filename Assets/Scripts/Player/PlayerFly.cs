@@ -6,6 +6,7 @@ public class PlayerFly : Player
 {
     [SerializeField] private InputAction flyInput;
     private Vector2 flyDirection;
+    private bool finishedLevel;
 
     public override void Start()
     {
@@ -31,6 +32,10 @@ public class PlayerFly : Player
 
     public override void TakeDamage()
     {
+        if (finishedLevel)
+        {
+            return;
+        }
         base.TakeDamage();
         m_animator.SetTrigger("Death");
         flyInput.Disable();
@@ -43,7 +48,14 @@ public class PlayerFly : Player
         foreach(CircleCollider2D circle in GetComponents<CircleCollider2D>())
         {
             Destroy(circle);
-        }
-        ;
+        };
+    }
+
+    public void EndLevel()
+    {
+        m_rigidBody.linearVelocityY = 0;
+        m_rigidBody.linearVelocityX = moveSpeed*1.5f;
+        flyInput.Disable();
+        finishedLevel = true;
     }
 }

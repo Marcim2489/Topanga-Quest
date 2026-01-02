@@ -12,6 +12,10 @@ public class LevelManager : MonoBehaviour
     {
         GameManager.Instance.lastLevelPlayed = SceneManager.GetActiveScene().name;
         totalCoins = FindObjectsByType<Coin>(0).Length;
+        if (totalCoins == 0)
+        {
+            totalCoins = FindObjectsByType<CoinTrigger>(0).Length;
+        }
     }
 
     private bool CollectedAllCoins()

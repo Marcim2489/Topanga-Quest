@@ -20,10 +20,10 @@ public class LevelMover : MonoBehaviour
         {
             return;
         }
-         transform.position +=Vector3.left*moveSpeed*Time.deltaTime;
+        transform.position +=Vector3.left*moveSpeed*Time.deltaTime;
     }
 
-    void Stop()
+    public void Stop()
     {
         stop = true;
     }

@@ -22,6 +22,25 @@ public class Activator : MonoBehaviour
         if(s!= null)
         {
             s.Trigger();
+            return;
+        }
+        CoinTrigger c = collision.gameObject.GetComponent<CoinTrigger>();
+        if (c != null)
+        {
+            c.Trigger();
+            return;
+        }
+        RubyTrigger r = collision.gameObject.GetComponent<RubyTrigger>();
+        if (r != null)
+        {
+            r.Trigger();
+            return;
+        }
+        LevelEndTrigger l= collision.gameObject.GetComponent<LevelEndTrigger>();
+        if (l != null)
+        {
+            l.Trigger();
+            return;
         }
     }
 }

@@ -6,16 +6,33 @@ public class SkullexShooting : SkullexBaseState
 {
     float timer;
     int shots;
+    bool canShoot;
     public override void EnterState(Skullex boss)
     {
         boss.BecomeVulnerable();
         timer = 0;
         shots = 0;
+        canShoot = false;
     }
 
     public override void UpdateState(Skullex boss)
     {
         timer+= Time.deltaTime;
+        if (canShoot == false)
+        {
+            if (timer<=boss.shotStartUp)
+            {
+                return;
+            }
+            else
+            {
+                boss.Shoot();
+                timer = 0;
+                shots++;
+                canShoot = true;
+            }
+        }
+        
         if (timer < boss.shotCooldown)
         {
             return;
@@ -26,26 +43,21 @@ public class SkullexShooting : SkullexBaseState
             boss.Shoot();
             timer = 0;
             shots++;
+            return;
         }
-        else
+        if (timer < boss.shotCooldown*1.7f)
         {
-            switch (boss.phase)
-            {
-                case 1:
-                    boss.ChangeState(boss.moveState1);
-                    break;
-                case 2:
-                    boss.ChangeState(boss.moveState2);
-                    break;
-                case 3:
-                    boss.ChangeState(boss.moveState3);
-                    break;
-            }
+            return;
         }
+        
+        boss.ChangeState(boss.moveState);
+        
     }
 
     public override void ExitState(Skullex boss)
     {
-        
+        timer = 0;
+        shots = 0;
+        canShoot = false;
     }
 }

@@ -8,26 +8,15 @@ public class SkullexTookDamage : SkullexBaseState
     {
         timer = 0;
         boss.Stop();
-        boss.BecomeInvulnerable();
+        
     }
 
     public override void UpdateState(Skullex boss)
     {
         timer += Time.deltaTime;
-        if (timer>= 0.5f)
+        if (timer>= 0.2f)
         {
-            switch (boss.phase)
-            {
-                case 1:
-                    boss.ChangeState(boss.moveState1);
-                    break;
-                case 2:
-                    boss.ChangeState(boss.moveState2);
-                    break;
-                case 3:
-                    boss.ChangeState(boss.moveState3);
-                    break;
-            }
+            boss.ChangeState(boss.betweenPhaseState);
         }
     }
 

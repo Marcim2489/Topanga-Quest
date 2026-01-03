@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SkullexMovePhase2 : SkullexBaseState
+public class SkullexMove : SkullexBaseState
 {
     public override void EnterState(Skullex boss)
     {

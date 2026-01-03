@@ -10,7 +10,7 @@ public class Cannon : MonoBehaviour
     [SerializeField]private AudioSource audioPlayer;
     private float timer;
     private bool canShoot;
-
+    private bool deactivated;
     void Start()
     {
         if (startUp <= 0)
@@ -22,6 +22,10 @@ public class Cannon : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (deactivated)
+        {
+            return;
+        }
         timer += Time.deltaTime;
         if (canShoot == false)
         {
@@ -45,5 +49,10 @@ public class Cannon : MonoBehaviour
             audioPlayer.Play();
             timer = 0;
         }
+    }
+
+    public void Deactivate()
+    {
+        deactivated = true;
     }
 }

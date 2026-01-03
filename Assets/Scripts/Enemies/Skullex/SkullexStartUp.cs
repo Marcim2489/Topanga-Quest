@@ -1,25 +1,23 @@
 using UnityEngine;
 
-public class SkullexMovePhase1 : SkullexBaseState
+public class SkullexStartUp : SkullexBaseState
 {
     public override void EnterState(Skullex boss)
     {
-        boss.MoveForward();
-        boss.BecomeInvulnerable();
+        boss.MoveDownward();
     }
 
     public override void UpdateState(Skullex boss)
     {
-        if (boss.IsHittingWall())
+        if (boss.IsHittingFloor())
         {
             boss.Stop();
-            boss.TurnAround();
             boss.ChangeState(boss.shootingState);
         }
     }
 
     public override void ExitState(Skullex boss)
     {
-        boss.BecomeVulnerable();
+        
     }
 }

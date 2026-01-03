@@ -38,7 +38,7 @@ public class BackgroundMusicPlayer : MonoBehaviour
 
     public void StopMusic()
     {
-        audioPlayer.resource = null;
+        // audioPlayer.resource = null;
         audioPlayer.Stop();
     }
 }

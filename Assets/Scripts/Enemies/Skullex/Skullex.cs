@@ -29,6 +29,7 @@ public class Skullex : Enemy
     public AudioResource bossMusic;
     [HideInInspector]public bool active; 
     [HideInInspector]public int phase = 1;
+    public event System.Action died;
     public override void Start()
     {
         base.Start();
@@ -62,6 +63,13 @@ public class Skullex : Enemy
         m_animator.SetTrigger("Damaged");
 
     }
+
+    public override void Death()
+    {
+        base.Death();
+        died?.Invoke();
+    }
+
     public void Shoot()
     {
         m_animator.SetTrigger("Shoot");

@@ -27,7 +27,7 @@ public class Skullex : Enemy
     public SkullexBetweenPhase betweenPhaseState = new SkullexBetweenPhase();
     [SerializeField]SpriteRenderer aura;
     public AudioResource bossMusic;
-
+    [HideInInspector]public bool active; 
     [HideInInspector]public int phase = 1;
     public override void Start()
     {
@@ -182,7 +182,7 @@ public class Skullex : Enemy
     }
     public void Trigger()
     {
-        ChangeState(startUpState);
+        active = true;
     }
     void OnDrawGizmosSelected()
     {

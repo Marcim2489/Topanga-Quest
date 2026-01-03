@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class BossTrigger : MonoBehaviour
     [SerializeField]GameObject door;
     [SerializeField]Skullex boss;
     [SerializeField]AudioSource bossMusicPlayer;
+    [SerializeField]CinemachineCamera cam;
 
     void Start()
     {
@@ -22,6 +24,8 @@ public class BossTrigger : MonoBehaviour
     void Trigger()
     {
         door.SetActive(true);
+        cam.Follow = bossMusicPlayer.gameObject.transform;
+        cam.LookAt = bossMusicPlayer.gameObject.transform;
         foreach (Cannon cannon in FindObjectsByType<Cannon>(0))
         {
             cannon.Deactivate();

@@ -9,7 +9,13 @@ public class WinInterfaceManager : MonoBehaviour
 
     void Start()
     {
-        coinsText.text = "Coins collected: "+ GameManager.Instance.lastLevelCoins+"/"+GameManager.Instance.lastLevelTotalCoins;
+        int collectedCoins = GameManager.Instance.lastLevelCoins;
+        int totalCoins = GameManager.Instance.lastLevelTotalCoins;
+        if (collectedCoins > totalCoins)
+        {
+            collectedCoins = totalCoins;
+        }
+        coinsText.text = "Coins collected: "+ collectedCoins+"/"+totalCoins;
         if (GameManager.Instance.lastLevelRuby)
         {
             rubyText.text = "Ruby found!";

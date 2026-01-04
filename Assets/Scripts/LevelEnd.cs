@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour
 {
+    [SerializeField]bool lastLevel = false;
     void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerHitbox player = collision.gameObject.GetComponent<PlayerHitbox>();
@@ -16,6 +17,12 @@ public class LevelEnd : MonoBehaviour
             GameManager.Instance.lastLevelRuby = lvlManager.rubyColected;
             GameManager.Instance.lastLevelPlayed = SceneManager.GetActiveScene().name;
             GameManager.Instance.completedLevels.Add(SceneManager.GetActiveScene().name);
+            if (lastLevel)
+            {
+                GameManager.Instance.completedGame = true;
+                GameManager.Instance.lastLevelJustPlayed = true;
+            }
+            GameManager.Instance.SaveGame();
             LevelLoader.Instance.LoadLevel("CompletedLevel");
         }
     }

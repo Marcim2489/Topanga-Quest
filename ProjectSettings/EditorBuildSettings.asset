@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelMap.unity
     guid: 4190ec97b0f35574b9513b8ae20d3a14
+  - enabled: 1
+    path: Assets/Scenes/CompletedGame.unity
+    guid: c294cf2e31b75724eba62b79c5f7770e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

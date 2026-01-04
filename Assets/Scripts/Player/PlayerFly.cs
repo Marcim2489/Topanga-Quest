@@ -25,6 +25,7 @@ public class PlayerFly : Player
             return;
         }
         flyDirection = flyInput.ReadValue<Vector2>();
+        Debug.Log(flyDirection);
         m_rigidBody.linearVelocity = flyDirection.normalized * moveSpeed;
         float dir = flyDirection.y*10;
         m_animator.SetInteger("Direction", (int)dir);

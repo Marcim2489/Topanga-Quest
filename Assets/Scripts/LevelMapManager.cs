@@ -48,6 +48,7 @@ public class LevelMapManager : MonoBehaviour
             BackgroundMusicPlayer.Instance.StopMusic();
             SoundEffect s = Instantiate(sfxPlayer);
             s.PlaySFX(selectSFX,1);
+            player.exitInput.Disable();
             return;
         }
         

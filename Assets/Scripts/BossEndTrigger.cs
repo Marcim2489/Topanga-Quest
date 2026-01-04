@@ -11,6 +11,6 @@ public class BossEndTrigger : MonoBehaviour
 
     void Fall()
     {
-        m_rigidbody.linearVelocityY = -3;
+        m_rigidbody.linearVelocityY = -2;
     }
 }

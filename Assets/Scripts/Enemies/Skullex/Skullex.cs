@@ -25,11 +25,17 @@ public class Skullex : Enemy
     public SkullexTookDamage damageState = new SkullexTookDamage();
     public SkullexMove moveState = new SkullexMove();
     public SkullexBetweenPhase betweenPhaseState = new SkullexBetweenPhase();
+    public SkullexDeathState deathState = new SkullexDeathState();
     [SerializeField]SpriteRenderer aura;
     public AudioResource bossMusic;
     [HideInInspector]public bool active; 
     [HideInInspector]public int phase = 1;
     public event System.Action died;
+    public AudioSource musicPlayer;
+    public SoundEffect sfxPlayer;
+    public AudioResource shotSFX;
+    public AudioResource explodeSFX;
+    [HideInInspector]public bool readyToDie;
     public override void Start()
     {
         base.Start();
@@ -57,19 +63,37 @@ public class Skullex : Enemy
         }
     public override void TakeDamage()
     {
-        base.TakeDamage();
-        phase++;
+        currentHealth --;
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
+        else
+        {
+            phase++;
         ChangeState(damageState);
         m_animator.SetTrigger("Damaged");
-
+        }
     }
 
     public override void Death()
     {
-        base.Death();
-        died?.Invoke();
+        ChangeState(betweenPhaseState);
+        readyToDie = true;
+        ceilingCastOffset = 4.2f;
     }
 
+    public void DeathAnimation()
+    {
+        SoundEffect s = Instantiate(sfxPlayer);
+        s.PlaySFX(explodeSFX,1);
+        m_animator.SetTrigger("Death");
+        died?.Invoke();
+    }
+    public void Vanish()
+    {
+        Destroy(gameObject);
+    }
     public void Shoot()
     {
         m_animator.SetTrigger("Shoot");
@@ -80,6 +104,8 @@ public class Skullex : Enemy
         p.speed = projectileSpeed;
         p.transform.Rotate(new Vector3(0,0,-90));
         p.Shoot();
+        SoundEffect s = Instantiate(sfxPlayer);
+        s.PlaySFX(shotSFX,1);
     }
 
     public void ShootDownwards(Vector3 position)
@@ -88,6 +114,8 @@ public class Skullex : Enemy
         p.speed = projectileSpeed*0.7f;
         p.transform.Rotate(new Vector3(0,0,-180));
         p.Shoot();
+        SoundEffect s = Instantiate(sfxPlayer);
+        s.PlaySFX(shotSFX,1);
     }
     public void MoveForward()
     {

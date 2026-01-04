@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,7 +13,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public int lastLevelCoins;
     [HideInInspector]public int lastLevelTotalCoins;
     [HideInInspector]public bool lastLevelRuby;
-
+    [HideInInspector]public bool completedGame;
+    [HideInInspector]public bool lastLevelJustPlayed;
+    string saveLocation;
     void Awake()
     {
         
@@ -21,10 +24,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        // lastLevelPlayed = "Level4";
-        
+        saveLocation = Path.Combine(Application.persistentDataPath,"Topanga Save,json");
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        LoadGame();
     }
 
     public bool CollectedAllCoins(string levelName)
@@ -35,5 +38,35 @@ public class GameManager : MonoBehaviour
     public bool CollectedRuby(string levelName)
     {
         return levelsWithRuby.Contains(levelName);
+    }
+
+    public void SaveGame()
+    {
+        SaveData saveData = new SaveData
+        {
+            ScompletedLevels = completedLevels,
+            SlevelsWithAllCoins = levelsWithAllCoins,
+            SlevelsWithRuby = levelsWithRuby,
+            SlastLevelPlayed=lastLevelPlayed,
+            ScompletedGame = completedGame
+        };
+        File.WriteAllText(saveLocation,JsonUtility.ToJson(saveData));
+    }
+
+    public void LoadGame()
+    {
+        if (File.Exists(saveLocation))
+        {
+            SaveData data = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
+            completedLevels = data.ScompletedLevels;
+            levelsWithAllCoins = data.SlevelsWithAllCoins;
+            levelsWithRuby = data.SlevelsWithRuby;
+            lastLevelPlayed = data.SlastLevelPlayed;
+            completedGame=data.ScompletedGame;
+        }
+        else
+        {
+            SaveGame();
+        }
     }
 }

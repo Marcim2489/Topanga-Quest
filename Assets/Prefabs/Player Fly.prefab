@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60638b2aff4b1954caaaf9d46ea17ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 280
+  moveSpeed: 4.15
   m_rigidBody: {fileID: 1072420228213370120}
   m_animator: {fileID: 5954137672469356310}
   m_spriteRenderer: {fileID: 1128049897762980325}
@@ -423,7 +423,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 98791d7a718b38c4297fce2ec339fabc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

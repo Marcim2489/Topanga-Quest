@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &303075570063000594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436518038471587483}
+  m_Layer: 3
+  m_Name: CameraPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &436518038471587483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303075570063000594}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.625, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9066416959224152270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850292055855697340
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2152257314797901837}
+  - {fileID: 436518038471587483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3261500017767593093
@@ -55,6 +87,8 @@ MonoBehaviour:
   m_spriteRenderer: {fileID: 529903484371127356}
   hitbox: {fileID: 290887589245953712}
   deathAnimationTime: 0.5
+  sfxPlayer: {fileID: 7098947694246509766, guid: 17696be4be13f114a8a1af82121aba10, type: 3}
+  deathSFX: {fileID: 8300000, guid: 53c7b02890535214483970141bded425, type: 3}
   jump: 10
   moveInput:
     m_Name: Move Input
@@ -118,11 +152,9 @@ MonoBehaviour:
   jumpPressed: 0
   canJump: 0
   enemyJumped: 0
-  sfxPlayer: {fileID: 7098947694246509766, guid: 17696be4be13f114a8a1af82121aba10, type: 3}
   jumpSFX: {fileID: 8300000, guid: 4eddee55f2181c14db8fa98baeb84d1a, type: 3}
   hitEnemySFX: {fileID: 8300000, guid: 3cd7f86f51a8cbc4697d844d12b36abd, type: 3}
   landSFX: {fileID: 8300000, guid: 8bb1ad5c92e5e2e4db186721f5b2421e, type: 3}
-  deathSFX: {fileID: 8300000, guid: 53c7b02890535214483970141bded425, type: 3}
 --- !u!212 &529903484371127356
 SpriteRenderer:
   m_ObjectHideFlags: 0

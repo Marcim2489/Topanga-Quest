@@ -12,6 +12,10 @@ public class SkullexBetweenPhase : SkullexBaseState
         hitCeiling = false;
         shots = 0;
         boss.BecomeInvulnerable();
+        if (boss.readyToDie)
+        {
+            boss.speed *= 0.5f;
+        }
         boss.MoveForward();
     }
 
@@ -22,7 +26,7 @@ public class SkullexBetweenPhase : SkullexBaseState
             timer+= Time.deltaTime;
             if (shots >= 6)
             {
-                if (timer >= 2)
+                if (timer >= 0.8)
                 {
                     boss.ChangeState(boss.startUpState);
                 }
@@ -44,11 +48,24 @@ public class SkullexBetweenPhase : SkullexBaseState
             }
             return;
         }
-        boss.AccelerateUpwards(0.1f);
+        if (boss.readyToDie)
+        {
+            boss.AccelerateUpwards(0.05f);
+        }
+        else
+        {
+            boss.AccelerateUpwards(0.1f);
+        }
+        
         if (boss.IsHittingCeiling())
         {
             hitCeiling = true;
             boss.Stop();
+            if (boss.readyToDie)
+            {
+                boss.ChangeState(boss.deathState);
+                return;
+            }
             boss.DecidePosition();
             if (boss.transform.position == boss.rightPosition)
             {

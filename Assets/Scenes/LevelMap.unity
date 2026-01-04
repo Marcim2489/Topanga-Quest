@@ -12002,11 +12002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 83787807602872385, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.875
       objectReference: {fileID: 0}
     - target: {fileID: 83787807602872385, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.125
       objectReference: {fileID: 0}
     - target: {fileID: 83787807602872385, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12066,11 +12066,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3586315694954590219, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.875
       objectReference: {fileID: 0}
     - target: {fileID: 3586315694954590219, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.125
       objectReference: {fileID: 0}
     - target: {fileID: 3586315694954590219, guid: d5b3ccbfc18959540a79b79f96e368b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12460,7 +12460,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.9375, y: 1.125}
+  m_Offset: {x: 0.765625, y: 1.125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12470,7 +12470,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.125, y: 7.25}
+  m_Size: {x: 8.46875, y: 7.25}
   m_EdgeRadius: 0
 --- !u!1001 &754815666
 PrefabInstance:
@@ -16332,7 +16332,7 @@ Transform:
   m_GameObject: {fileID: 1676918373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.875, y: -0.125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16414,6 +16414,23 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Select Input
+      m_Flags: 0
+    m_Flags: 0
+  exitInput:
+    m_Name: Exit Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 10a6f5fe-99f0-4a08-a3f7-b0a38272ac1d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3fda37fd-509e-4f19-9dbe-8ad692811303
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Exit Input
       m_Flags: 0
     m_Flags: 0
   animator: {fileID: 1676918377}

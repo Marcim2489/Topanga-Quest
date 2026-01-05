@@ -72,6 +72,16 @@ public class PlayerStateManager : Player
         currentState = inputState;
         currentState.EnterState(this);
     }
+    public void ForceJumpState()
+    {
+        if (currentState != null)
+        {
+            currentState.ExitState(this);
+        }
+        enemyJumped = true;
+        currentState = jumpState;
+        currentState.EnterState(this);
+    }
     public void Move()
     {
         float direction = moveInput.ReadValue<float>();
@@ -105,8 +115,8 @@ public class PlayerStateManager : Player
 
     private void EnemyJump()
     {
-        enemyJumped = true;
-        ChangeState(jumpState);
+        // enemyJumped = true;
+        ForceJumpState();
     }
 
     public bool IsGrounded()
